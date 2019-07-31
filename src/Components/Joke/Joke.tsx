@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './Joke.module.sass'
 
 interface IProps {
-    joke?: string;
+    vote?: number;
 }
 
 enum Emote {
