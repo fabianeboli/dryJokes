@@ -18,27 +18,12 @@ enum Emote {
 }
 
 export const Joke:FC<IProps> = (props: IProps) => {
-    // const [votes, setVotes] = useState<number>(0)
-    // const [joke, setJoke] = useState('')
-
-    // useEffect(() => {
-    //     const fetchJoke = async () => {
-    //         fetch('https://icanhazdadjoke.com/', { headers: { Accept: "application/json" } })
-    //             .then(async res => await res.json())
-    //             .then(async res => await setJoke(res.joke))
-    //     }
-    //     fetchJoke();
-    // }, [])
-
-    // const handleJoke(() => )
-
+  
     const handleUpVote = () => {
-        // setVotes(votes + 1);
         props.upVote(props.id);
     }
 
     const handleDownVote = () => {
-        // setVotes(votes - 1);
         props.downVote(props.id);
     }
 

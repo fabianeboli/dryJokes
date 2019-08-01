@@ -22,11 +22,6 @@ export const Main = (props: IProps) => {
 
     
     const fetchJokes = async (numberOfJokesToCreate: number = props.numberOfJokes) => {
-        // return fetch(url, { headers: { Accept: "application/json" } })
-        //     .then(async res => await res.json())
-        //     .then(async res => await {id: uuid(), vote: 9, joke: res.joke})
-        //     .catch(async err => await {id: uuid(), vote: 0, joke: `Error: ${err}`} 
-        //     )
         let jokeArray:Joke[] = [];
         for(let i = 0; i< numberOfJokesToCreate; i++) {
             const res = await axios.get(url, { headers: { Accept: "application/json" }});
@@ -48,13 +43,6 @@ export const Main = (props: IProps) => {
         return joke.sort((a, b) => b.vote - a.vote)
                     .map(el => <Joke key={el.id} id={el.id} 
                     vote={el.vote} joke={el.joke} upVote={upVote} downVote={downVote}/>)}
-
-    // const createJokes = () => {
-    //      setJoke(
-    //         [...Array(numberOfJokesToCreate)].map(() => fetchJoke())
-    //     )
-         
-    // }
 
     return (
         <div className={styles.container}>
