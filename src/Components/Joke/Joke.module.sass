@@ -1,14 +1,15 @@
 @import '../../_Imports.module.sass'
 
 .jokeContainer
+    font-family: Courier New, Courier, monospace
     display: flex
-    margin: 0 0.2em
-    border-top: 1px solid #efefef
+    border-top: 1px solid $borderColor
+    align-items: baseline
+    background: white
+    padding: 2px
 
 .button
     border-radius: 100%
-    padding: 0 16px
-    text-decoration: none
     background-color: $backgroundButton
     font-size: 1.2em
     font-weight: bold
@@ -17,7 +18,7 @@
 .votes
     font-weight: bold
     font-size: 1.2em
-    margin: auto 0.2em
+    margin: 0 0.2em
 
 .upVoteButton
     @extend .button
@@ -28,7 +29,7 @@
     border: 3px solid $downVoteButton 
 
 .joke
-    font-size: 1.2em
+    font-size: 1.0em
     margin: 0.5em 0.4em
 
 .emote
