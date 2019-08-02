@@ -6,15 +6,16 @@
     border-top: 1px solid $borderColor
     align-items: baseline
     background: white
-    padding: 2px
+    padding: 10px
     text-align: left
+    color: $shadowColor
 
 .button
     border-radius: 100%
     background-color: $backgroundButton
     font-size: 1.2em
     font-weight: bold
-    margin: 0.2em 0
+    margin: 0 0.2em
 
 .votes
     font-weight: bold
@@ -35,5 +36,26 @@
 
 .emote
     margin: auto 0.25em 
-    font-size: 1.5em 
+    font-size: 1.75em 
     font-weight: bolder
+    text-shadow: 2px 2px 2px $shadowColor
+
+.excellentEmote
+    @extend .emote
+    color: $secondary
+
+.goodEmote
+    @extend .emote
+    color: $accent
+
+.mehEmote
+    @extend .emote
+    color: black
+
+.sadEmote
+    @extend .emote
+    color: $secondaryAccent
+
+.angryEmote
+    @extend .emote
+    color: $primary

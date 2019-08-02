@@ -11,15 +11,17 @@ interface IProps {
     downVote: any;
 }
 
-enum Emote {
-    Excellent = 'faLaugh',
-    Good = 'faSmile',
-    Ok = 'faMeh',
-    Bad = 'faAngry',
-    Terrible = 'faFrown'
-}
 
 export const Joke:FC<IProps> = (props: IProps) => {
+    const [EmoteColor, setEmoteColor] = useState('black')
+    const emoteColor = () => {
+        const vote = props.vote;
+        if (vote > 6) { return styles.excellentEmote }
+        else if (vote > 1 && vote <= 6) { return styles.goodEmote }
+        else if (vote >= -1 && vote <= 1) { return styles.mehEmote }
+        else if (vote > -5 && vote <= -2) { return styles.sadEmote }
+        else if (vote <= -4) { return styles.angryEmote }
+    } 
   
     const handleUpVote = () => {
         props.upVote(props.id);
@@ -31,7 +33,7 @@ export const Joke:FC<IProps> = (props: IProps) => {
 
     const selectEmote = () => {
         const vote = props.vote;
-        if (vote > 6) { return <FontAwesomeIcon icon={faLaugh}/> }
+        if (vote > 6) {  return <FontAwesomeIcon icon={faLaugh}/> }
         else if (vote > 1 && vote <= 6) { return <FontAwesomeIcon icon={faSmile}/> }
         else if (vote >= -1 && vote <= 1) { return <FontAwesomeIcon icon={faMeh}/> }
         else if (vote > -5 && vote <= -2) { return  <FontAwesomeIcon icon={faFrown}/> }
@@ -45,7 +47,7 @@ export const Joke:FC<IProps> = (props: IProps) => {
                 <div className={styles.votes}>{props.vote}</div>
                 <button className={styles.downVoteButton} onClick={handleDownVote}>-</button>
             <p onClick={handleDownVote} className={styles.joke}> {props.joke} </p>
-            <div className={styles.emote}>{selectEmote()}</div>
+            <div className={emoteColor()}>{selectEmote()}</div>
         </div>
     )
 }
