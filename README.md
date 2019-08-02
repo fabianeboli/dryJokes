@@ -1,2 +1,2 @@
-#Dry Jokes
+# Dry Jokes
 Application fetches 10 random dry jokes from https://icanhazdadjoke.com/ API. The application provides possibility to rate jokes. Jokes are sorted accordingly to their number of votes. Jokes also have ranks that are represented by an emoticon.    
