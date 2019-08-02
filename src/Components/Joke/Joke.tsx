@@ -46,7 +46,7 @@ export const Joke:FC<IProps> = (props: IProps) => {
                 <button className={styles.upVoteButton} onClick={handleUpVote}>+</button>
                 <div className={styles.votes}>{props.vote}</div>
                 <button className={styles.downVoteButton} onClick={handleDownVote}>-</button>
-            <p onClick={handleDownVote} className={styles.joke}> {props.joke} </p>
+            <p className={styles.joke}> {props.joke} </p>
             <div className={emoteColor()}>{selectEmote()}</div>
         </div>
     )
