@@ -8,7 +8,22 @@
     font-size: 1.2rem
     
 .main
-    box-shadow: 2px 2px 8px $shadowColor
+    box-shadow: 2px 2px 10px $shadowColor
     display: flex
     justify-content: center
+    
+.spinner
+    font-size: 10.0em
+    margin: 1.0em
+    animation: rotateSpinner 3s linear infinite
+    border-radius: 100%
+    color: $accent
+    background: $primary
+
+
+@keyframes rotateSpinner 
+    0% 
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
     

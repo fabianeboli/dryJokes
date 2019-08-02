@@ -1,4 +1,6 @@
-import React, { useState, useEffect, FC } from 'react'
+import React, { useState, useEffect, FC } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFrown, faAngry,faMeh, faSmile, faLaugh } from '@fortawesome/free-regular-svg-icons';
 import styles from './Joke.module.sass'
 
 interface IProps {
@@ -10,11 +12,11 @@ interface IProps {
 }
 
 enum Emote {
-    Excellent = ':D',
-    Good = ':)',
-    Ok = ':|',
-    Bad = ':(',
-    Terrible = '>:C'
+    Excellent = 'faLaugh',
+    Good = 'faSmile',
+    Ok = 'faMeh',
+    Bad = 'faAngry',
+    Terrible = 'faFrown'
 }
 
 export const Joke:FC<IProps> = (props: IProps) => {
@@ -29,11 +31,11 @@ export const Joke:FC<IProps> = (props: IProps) => {
 
     const selectEmote = () => {
         const vote = props.vote;
-        if (vote > 6) { return Emote.Excellent; }
-        else if (vote > 1 && vote <= 6) { return Emote.Good; }
-        else if (vote >= -1 && vote <= 1) { return Emote.Ok; }
-        else if (vote > -5 && vote <= -2) { return Emote.Bad; }
-        else if (vote <= -4) { return Emote.Terrible; }
+        if (vote > 6) { return <FontAwesomeIcon icon={faLaugh}/> }
+        else if (vote > 1 && vote <= 6) { return <FontAwesomeIcon icon={faSmile}/> }
+        else if (vote >= -1 && vote <= 1) { return <FontAwesomeIcon icon={faMeh}/> }
+        else if (vote > -5 && vote <= -2) { return  <FontAwesomeIcon icon={faFrown}/> }
+        else if (vote <= -4) { return <FontAwesomeIcon icon={faAngry}/> }
 
     }
 

@@ -2,21 +2,23 @@
 @import '../../_Imports.module.sass'
 
 .Header
-    // background: linear-gradient(to top,#FFC371, #FF5F6D)
     background: $primary
     color: white
     display: flex
     justify-content: center
     flex-direction: column
 
+.accentTitle
+    font-family: 'Codystar', cursive
+    opacity: 0.35
+    margin-bottom: 0.2em
+
 .title
-    font-size: 2.5em
+    font-family: 'Luckiest Guy', cursive
+    font-size: 3.5em
     margin: 0
 
-.newJokeButton
-    // background: #FF5F6D
-    // background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D)
-    // background: linear-gradient(to right, yellow, red)
+.JokeButton
     background: $accent
     color: white
     font-weight: bold 
@@ -25,8 +27,10 @@
     text-shadow: 1px 1px 1px #555555aa
     padding: 10px
     font-size: 2.0em
-    margin: 1.0em
+    margin: 0.5em 1.0em
+    text-shadow: 1px 1px 2px $shadowColor
+
 
 .emote
-    font-size: 2.0em
+    font-size: 6.0em
     margin: 0.4rem 
